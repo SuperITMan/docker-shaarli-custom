@@ -8,7 +8,7 @@ RUN set -x \
     && cd material \
     && npm install --unsafe-perm node-sass \
     && npm install \
-    && gulp build
+    && npm run build
 
 WORKDIR /plugins
 RUN set -x \
