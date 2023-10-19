@@ -1,4 +1,4 @@
-FROM node:14 as builder
+FROM node:16 as builder
 
 RUN npm install -g gulp
 
@@ -24,7 +24,7 @@ RUN set -x \
     && git clone https://github.com/trailjeep/shaarli-favicons.git favicons \
     && rm -rf **/.git
 
-FROM shaarli/shaarli:master
+FROM ghcr.io/shaarli/shaarli:release
 LABEL maintainer="SuperITMan <admin at superitman dot com>"
 
 WORKDIR /var/www/shaarli
